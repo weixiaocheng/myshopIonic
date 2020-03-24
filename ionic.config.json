@@ -1,0 +1,7 @@
+{
+  "name": "villapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
