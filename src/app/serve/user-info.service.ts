@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserInfoService {
-
-  constructor(private storage: Storage ) {
+  private storage: Storage;
+  constructor( ) {
     this.storage = window.localStorage;
   }
 
