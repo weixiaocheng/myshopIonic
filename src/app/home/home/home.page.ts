@@ -9,7 +9,7 @@ import {HttpService} from '../../http/http.service';
 export class HomePage implements OnInit {
 
   // 商品列表
-  productList ;
+  public productList ;
   constructor(private httpserve: HttpService) { }
 
   ngOnInit() {
