@@ -8,12 +8,14 @@ import {HttpService} from '../../http/http.service';
 })
 export class HomePage implements OnInit {
 
+  // 商品列表
+  productList ;
   constructor(private httpserve: HttpService) { }
 
   ngOnInit() {
     this.httpserve.HttpRequset_GET('ProductController/getProductList', {'page_size': 10, 'page_index' : 1}).
     subscribe(data => {
-      console.log(data);
+        this.productList = data;
         },
             e => {
       console.log(e);
