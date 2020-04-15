@@ -8,15 +8,16 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule} from '@angular/common/http';
-import {HttpService} from './http/http.service';
-import {UserInfoService} from './serve/user-info.service';
-import {ProductComponent} from './product/product/product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './http/http.service';
+import { UserInfoService } from './serve/user-info.service';
+import {ProductModule} from './product/product/product.module';
+
+
 
 @NgModule({
     declarations: [
-        AppComponent,
-        ProductComponent
+        AppComponent
     ],
     entryComponents: [],
     imports: [
@@ -24,6 +25,7 @@ import {ProductComponent} from './product/product/product.component';
         IonicModule.forRoot(),
         AppRoutingModule,
         HttpClientModule,
+        ProductModule
     ],
     providers: [
         StatusBar,
@@ -33,7 +35,7 @@ import {ProductComponent} from './product/product/product.component';
         UserInfoService
     ],
     exports: [
-        ProductComponent
+
     ],
     bootstrap: [AppComponent]
 })

@@ -5,25 +5,14 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<!--
-ct_id: 6
-product_name: "iphonex"
-price: 100
-stock: 100
-create_time: "2020-03-16 21:30:46"
-status: 1
-main_img_url: "http://tp5.summer.com/storage/topic/20200316/150725fcc67bd22e6effd292dee9cf22.jpeg"
-des: "这是商品详情 <br> 混合了html 片段在里面"
-is_home: 0
-is_valishop: 0
-max_count: 1
-update_time: "2020-03-16 21:30:46"
-imgs: "tp5.summer.com/storage/topic/20200316/150725fcc67bd22e6effd292dee9cf22.jpeg"
-sale: 0
--->
+
 <ion-content>
-    <div *ngFor="let item of productList">
-      <img src="{{item.main_img_url}}">
-      <p>{{item.product_name}}</p>
-    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let item of productList" >
+                <app-product [productData]="item" class="product-item"></app-product>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

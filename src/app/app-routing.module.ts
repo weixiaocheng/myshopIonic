@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'mine',
     loadChildren: () => import('./mine/mine/mine.module').then( m => m.MinePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./user/login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({
