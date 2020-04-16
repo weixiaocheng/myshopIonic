@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
+  userName: string;
+  password: string;
+  // 这里以上是做 变量的
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

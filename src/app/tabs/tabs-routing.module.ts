@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {LoginGuard} from '../guard/login.guard';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../cart/cart/cart.module').then(m => m.CartPageModule)
+              import('../cart/cart/cart.module').then(m => m.CartPageModule),
+              canActivate: [LoginGuard]
           }
         ]
       },
@@ -32,7 +34,8 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../mine/mine/mine.module').then(m => m.MinePageModule)
+              import('../mine/mine/mine.module').then(m => m.MinePageModule),
+            canActivate: [LoginGuard]
           }
         ]
       },

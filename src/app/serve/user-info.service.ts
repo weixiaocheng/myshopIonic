@@ -19,7 +19,7 @@ export class UserInfoService {
     return  this.storage.getItem('userName');
   }
 
-  getToken() {
+  getToken():string {
     return this.storage.getItem('token');
   }
 
