@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {LoginGuard} from './guard/login.guard';
+
 
 const routes: Routes = [
   {
@@ -10,10 +10,6 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./user/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'base-page',
-    loadChildren: () => import('./base/base-page/base-page.module').then( m => m.BasePagePageModule)
   }
 ];
 @NgModule({
