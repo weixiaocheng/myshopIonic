@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import {LoadingController, ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-base-page',
@@ -8,9 +8,10 @@ import { ToastController } from '@ionic/angular';
 })
 export class BasePagePage implements OnInit {
 
-  constructor(public toast: ToastController) { }
+  constructor(public toast: ToastController, public loadCtrl: LoadingController) { }
 
   private _toastCtrl;
+  private _loadingCtrl;
 
   ngOnInit() {
   }
@@ -34,5 +35,22 @@ export class BasePagePage implements OnInit {
 
   async showToast(mesg: string, dura = 2000, positi:'top' | 'bottom' | 'middle' = 'bottom') {
        this.getToastCtrl(mesg, dura, positi);
+  }
+
+  async showLoading(mesg: string, dura = 10000) {
+    this._loadingCtrl = await this.loadCtrl.create({
+      message: mesg,
+      duration: dura,
+      backdropDismiss: false
+    });
+    this._loadingCtrl.present();
+  }
+
+  async dismissLoading() {
+    console.log('23223');
+    if (this._loadingCtrl != null || this._loadingCtrl != undefined) {
+      this._loadingCtrl.dismiss();
+      this._loadingCtrl = null;
+    }
   }
 }

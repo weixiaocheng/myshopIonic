@@ -23,7 +23,8 @@ export class HttpService {
   httpHeader() {
     const headerParams = new HttpHeaders({
       'deivce': 'ios',
-      'version': '1.0.0'
+      'version': '1.0.0',
+      'Content-Type' : 'application/json; charset=utf-8'
     });
     const token = this.userInfo.getToken();
     if (token != undefined && token.length > 0) {
@@ -66,7 +67,7 @@ export class HttpService {
     let observeAble  = new Observable((observe)=> {
       let body = JSON.stringify(params);
       this.http.post(http_url,body,{
-        headers: this.httpHeader()
+        headers: this.httpHeader(),
       }).subscribe(data => {
         console.log('请求成功');
         this.checkBackData(data, observe);
