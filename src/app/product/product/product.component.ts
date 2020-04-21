@@ -36,33 +36,3 @@ export class ProductComponent implements OnInit {
   }
 }
 
-
-/*
-create_time: "2020-03-16 21:30:46"
-
-des: "这是商品详情 <br> 混合了html 片段在里面"
-
-imgs: "tp5.summer.com/storage/topic/20200316/150725fcc67bd22e6effd292dee9cf22.jpeg"
-
-is_home: 0
-
-is_valishop: 0
-
-main_img_url: "http://tp5.summer.com/storage/topic/20200316/150725fcc67bd22e6effd292dee9cf22.jpeg"
-
-max_count: 1
-
-price: 100
-
-product_id: 6
-
-product_name: "iphonex"
-
-sale: 0
-
-status: 1
-
-stock: 100
-
-update_time: "2020-03-16 21:30:46"
-*/

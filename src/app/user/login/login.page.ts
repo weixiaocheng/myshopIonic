@@ -11,6 +11,7 @@ import {RegisterPage} from '../register/register.page';
 })
 export class LoginPage extends BasePagePage implements OnInit {
 
+
   userName: string = null;
   password: string = null;
   // 这里以上是做 变量的

@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>register</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <div>
+<!--    主标题 -->
+    <ion-label class="register-title">注册</ion-label>
+<!--    输入框-->
+    <ion-item>
+      <ion-label>账户 :</ion-label>
+      <ion-input placeholder="请输入手机号" type="phone" [(ngModel)]="phoneNumber" maxlength="11"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>密码 :</ion-label>
+      <ion-input placeholder="密码" type="password" [(ngModel)]="password" maxlength="16"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>验证码 :</ion-label>
+      <ion-input placeholder="验证码" type="tel" [(ngModel)]="validateCode" maxlength="4"></ion-input>
+        <ion-button (click)="senderCode()">发送验证码</ion-button>
+    </ion-item>
+      <div style="text-align: center">
+          <ion-button size="small" class="login-button" (click)="registerApp()" >注册</ion-button>
+      </div>
+  </div>
 </ion-content>

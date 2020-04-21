@@ -15,11 +15,14 @@ import {ProductModule} from './product/product/product.module';
 
 
 
+
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
-    entryComponents: [],
+    entryComponents: [
+
+    ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(),
