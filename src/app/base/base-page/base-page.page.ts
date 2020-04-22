@@ -53,4 +53,26 @@ export class BasePagePage implements OnInit {
       this._loadingCtrl = null;
     }
   }
+
+  /*
+  * 这里实现一个关于用户手机号/邮箱的的验证
+  * */
+  public checkPhoneNumber(phoneString: string) {
+    if(!(/^1[3456789]\d{9}$/.test(phoneString))){
+      this.showToast('手机号码有误');
+      return false;
+    }
+    return true;
+  }
+  
+  public checkEmailString( emailString: string) {
+    var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    if (!reg.test(emailString)) {
+      this.showToast('邮箱不正确');
+      return false;
+    }
+    return true;
+  }
 }
+
+
