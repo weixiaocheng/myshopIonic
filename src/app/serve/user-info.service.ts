@@ -11,7 +11,7 @@ export class UserInfoService {
 
   setUserInfo(data) {
     this.storage.setItem('phone' , data['phone']);
-    this.storage.setItem('userName', data['userName']);
+    this.storage.setItem('userName', data['user_name']);
     this.storage.setItem('token', data['token']);
   }
 

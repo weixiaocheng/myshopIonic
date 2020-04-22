@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {RegisterPage} from '../register/register.page';
 import {HttpService} from '../../http/http.service';
 import {timeInterval} from 'rxjs/operators';
+import {UserInfoService} from '../../serve/user-info.service';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +22,7 @@ export class LoginPage extends BasePagePage implements OnInit {
   constructor(private toastCtrl: ToastController,
               private loadingCtr: LoadingController,
               private router: Router ,
+              private userInfo : UserInfoService,
               private  httpserve: HttpService) {
     super(toastCtrl, loadingCtr);
   }
@@ -49,11 +51,13 @@ export class LoginPage extends BasePagePage implements OnInit {
     this.httpserve.HttpRequset_POST('Login/loinApp',{'password' : this.password, 'phone' : this.userName})
         .subscribe(data =>{
           console.log('登录成功');
+          this.dismissLoading();
+          this.showToast("登录成功",1000, 'middle');
+          this.userInfo.setUserInfo(data);
         }, e =>{
           console.log(e);
         }, () => {
           console.log('请求结束');
-          setTimeout(() => this.dismissLoading(), 1000);
         });
   }
 

@@ -17,11 +17,9 @@ export class BasePagePage implements OnInit {
   }
 
   // 获取toast 的单例
-  async getToastCtrl(mesg, dura, positi: 'top' | 'bottom' | 'middle' = 'bottom') {
-    if (this._toastCtrl != null) {
-      if (this._toastCtrl.message === mesg ){
-        return ;
-      }
+  private async getToastCtrl(mesg, dura, positi: 'top' | 'bottom' | 'middle' = 'bottom') {
+    if (this._toastCtrl != null && this.toast != undefined) {
+
       this._toastCtrl.dismiss();
       this._toastCtrl = null;
     }
@@ -34,6 +32,9 @@ export class BasePagePage implements OnInit {
   }
 
   async showToast(mesg: string, dura = 2000, positi:'top' | 'bottom' | 'middle' = 'bottom') {
+    if (this._loadingCtrl != null || this._loadingCtrl != undefined) {
+      this.dismissLoading();
+    }
        this.getToastCtrl(mesg, dura, positi);
   }
 
@@ -47,7 +48,6 @@ export class BasePagePage implements OnInit {
   }
 
   async dismissLoading() {
-    console.log('23223');
     if (this._loadingCtrl != null || this._loadingCtrl != undefined) {
       this._loadingCtrl.dismiss();
       this._loadingCtrl = null;
